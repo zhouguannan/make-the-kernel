@@ -24,9 +24,9 @@ os.system(
 )
 os.system("patch -p1 < uksm-5.11.patch")
 os.system("patch -p1 < cacule-5.11.patch")
-os.system("make menuconfig")
-os.system("make -j" + cpucore)
-os.system("make modules_install -j" + cpucore)
+os.system("sudo make menuconfig")
+os.system("sudo make -j" + cpucore)
+os.system("sudo make modules_install -j" + cpucore)
 print("already maked")
 shure = input(
     "WARNING IT'S DANGER!: are you shure to install the new kernel to your computer?"
