@@ -6,9 +6,9 @@ print()
 sysname = input("what\'s your system?(\"debian\"or\"arch\"):  ")
 print("installing git and wget\n")
 if sysname == "debian":
-    os.system("sudo apt install git && sudo apt install wget")
+    os.system("sudo apt install git wget build-essential make gcc")
 elif sysname == "arch":
-    os.system("sudo pacman -S git && sudo pacman -S wget")
+    os.system("sudo pacman -S git wget make base-devel gcc")
 cpucore = input("how many cpu core are in your cpu(enter a number): ")
 os.system("mkdir make-the-kernel")
 os.chdir("make-the-kernel")
