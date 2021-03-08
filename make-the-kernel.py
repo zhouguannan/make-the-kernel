@@ -13,7 +13,7 @@ cpucore = input("how many cpu core are in your cpu(enter a number): ")
 os.system("mkdir make-the-kernel")
 os.chdir("make-the-kernel")
 os.system(
-    "aria2c --split=100 https://hub.fastgit.org/xanmod/linux/archive/5.11.zip")
+    "aria2c --split=100 https://github.com/xanmod/linux/archive/5.11.zip")
 os.system("unzip linux-5.11.zip")
 os.chdir("linux-5.11")
 os.system(
