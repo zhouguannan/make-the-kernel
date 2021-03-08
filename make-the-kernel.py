@@ -15,6 +15,7 @@ os.chdir("make-the-kernel")
 os.system(
     "aria2c --split=100 https://hub.fastgit.org/xanmod/linux/archive/5.11.zip")
 os.system("unzip linux-5.11.zip")
+os.chdir("linux-5.11")
 os.system(
     "aria2c --split=100 https://raw.github.com/hamadmarri/cacule-cpu-scheduler/master/patches/CacULE/v5.11/cacule-5.11.patch"
 )
