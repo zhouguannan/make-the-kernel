@@ -4,7 +4,7 @@ print(
 )
 print()
 sysname = input("what\'s your system?(\"debian\"or\"arch\"):  ")
-print("installing git and wget\n")
+print("installing build tools\n")
 if sysname == "debian":
     os.system("sudo apt install git wget build-essential make gcc")
 elif sysname == "arch":
