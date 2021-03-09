@@ -6,24 +6,22 @@ print("Please make shure your terminal has 80x80 char")
 sysname = input("what\'s your system?(\"debian\"or\"arch\"):  ")
 print("installing build tools\n")
 if sysname == "debian":
-    os.system("sudo apt install unzip build-essential make gcc aria2")
+    os.system("sudo apt install tar build-essential make gcc aria2")
 elif sysname == "arch":
-    os.system("sudo pacman -S unzip make base-devel gcc aria2")
+    os.system("sudo pacman -S tar make base-devel gcc aria2")
 cpucore = input("how many cpu core are in your cpu(enter a number): ")
-os.system("mkdir make-the-kernel")
-os.chdir("make-the-kernel")
+os.system("mkdir src")
+os.chdir("src")
 os.system(
-    "aria2c --split=100 https://github.com/xanmod/linux/archive/5.11.zip")
-os.system("unzip linux-5.11.zip")
-os.chdir("linux-5.11")
-os.system(
-    "aria2c --split=100 https://raw.github.com/hamadmarri/cacule-cpu-scheduler/master/patches/CacULE/v5.11/cacule-5.11.patch"
+    "aria2c --split=100 https://hub.fastgit.org/xanmod/linux/archive/5.11.4-xanmod1-cacule.tar.gz"
 )
+os.system("tar -zxvf  linux-5.11.4-xanmod1-cacule.tar.gz")
+os.chdir("linux-5.11.4-xanmod1-cacule")
+os.system("pwd")
 os.system(
     "aria2c --split=100 https://raw.github.com/dolohow/uksm/master/v5.x/uksm-5.11.patch"
 )
 os.system("patch -p1 < uksm-5.11.patch")
-os.system("patch -p1 < cacule-5.11.patch")
 os.system("sudo make menuconfig")
 os.system("sudo make -j" + cpucore)
 os.system("sudo make modules_install -j" + cpucore)
