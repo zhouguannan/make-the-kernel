@@ -32,6 +32,8 @@ shure = input(
 if shure == "y":
     os.system("sudo make install")
     os.system("sudo grub-mkconfig -o /boot/grub/grub.cfg")
+    os.system("make clean")
     print("all finished,please REBOOT")
 else:
+    os.system("make claen")
     exit(1)
