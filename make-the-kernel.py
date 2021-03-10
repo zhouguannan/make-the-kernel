@@ -22,7 +22,7 @@ os.system(
     "aria2c --split=100 https://raw.github.com/dolohow/uksm/master/v5.x/uksm-5.11.patch"
 )
 os.system(
-    "aria2c --split=100 https://raw.githubusercontent.com/hamadmarri/cacule-cpu-scheduler/master/patches/CacULE/v5.11/cacule-5.11.patch"
+    "aria2c --split=100 https://raw.fastgit.org/hamadmarri/cacule-cpu-scheduler/master/patches/CacULE/v5.11/cacule-5.11.patch"
 )
 os.system("patch -p1 < uksm-5.11.patch")
 os.system("patch -p1 < cacule-5.11.patch")
